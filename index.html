@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaja · Confidentialité</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0d0d0f;
+  --surface: #141416;
+  --border: #222226;
+  --text: #f0f0f2;
+  --sub: #8888a0;
+  --accent: #3b82f6;
+  --accent-dim: rgba(59,130,246,0.1);
+  --warn: #f59e0b;
+  --warn-dim: rgba(245,158,11,0.1);
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(13,13,15,0.92);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+.nav-left { display: flex; align-items: center; gap: 10px; }
+.nav-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.nav-name { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.03em; }
+.nav-tag { font-size: 0.78rem; color: var(--sub); border: 1px solid var(--border); padding: 2px 10px; border-radius: 4px; }
+.nav-links { display: flex; gap: 18px; }
+.nav-links a { color: var(--sub); font-size: 0.82rem; text-decoration: none; }
+.nav-links a:hover { color: var(--text); }
+.hero {
+  max-width: 680px;
+  margin: 72px auto 64px;
+  padding: 0 32px;
+}
+.hero-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--accent); }
+h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.hero-meta { color: var(--sub); font-size: 0.85rem; }
+.layout {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 32px 100px;
+}
+.section { margin-bottom: 52px; }
+h2 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sub);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+p { color: #c0c0cc; margin-bottom: 14px; }
+p:last-child { margin-bottom: 0; }
+strong { color: var(--text); font-weight: 600; }
+.banner {
+  background: var(--warn-dim);
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin-bottom: 52px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.banner-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.banner-text { font-size: 0.875rem; color: #fcd34d; line-height: 1.6; }
+.banner-text strong { color: #fef3c7; }
+.data-list { list-style: none; }
+.data-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.data-list li:first-child { border-top: 1px solid var(--border); }
+.data-marker {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+.marker-blue { background: var(--accent); }
+.marker-yellow { background: var(--warn); }
+.marker-grey { background: var(--sub); }
+.data-label { font-weight: 600; font-size: 0.9rem; color: var(--text); margin-bottom: 2px; }
+.data-desc { font-size: 0.83rem; color: var(--sub); }
+.data-sensitive { font-size: 0.72rem; color: var(--warn); font-weight: 600; margin-top: 4px; }
+.callout {
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-top: 24px;
+  font-size: 0.875rem;
+}
+.callout-blue {
+  background: var(--accent-dim);
+  border: 1px solid rgba(59,130,246,0.2);
+  color: #93c5fd;
+}
+.callout-green {
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.2);
+  color: #6ee7b7;
+}
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 32px;
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--sub);
+  font-size: 0.8rem;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <div class="nav-dot"></div>
+    <span class="nav-name">Gaja</span>
+  </div>
+  <div class="nav-links">
+    <a href="tos.html">CGU</a>
+    <span class="nav-tag">Confidentialité</span>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Confidentialité</div>
+  <h1>Ce que Gaja<br>stocke sur toi</h1>
+  <div class="hero-meta">Mis à jour en septembre 2026 — Bot Discord de modération</div>
+</div>
+
+<div class="layout">
+
+  <div class="banner">
+    <div class="banner-icon">⚠️</div>
+    <div class="banner-text">
+      <strong>À lire avant tout.</strong> Gaja est un bot de modération réservé à un seul serveur Discord. Il ne stocke jamais le contenu de tes messages ni ton pseudo — uniquement ton identifiant Discord et l'historique des sanctions/actions de staff te concernant.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>L'essentiel</h2>
+    <p>Gaja gère la modération et l'équipe du serveur : avertissements, notes internes, mutes, peines temporaires, bannissements, liste noire, ainsi que la gestion des grades et des rôles de Référent (Modération, Casino, Animation). Un filtre automatique supprime aussi les liens d'invitation Discord non autorisés et les domaines suspects postés dans le serveur.</p>
+  </div>
+
+  <div class="section">
+    <h2>Données collectées</h2>
+    <ul class="data-list">
+      <li>
+        <div class="data-marker marker-grey"></div>
+        <div>
+          <div class="data-label">Discord User ID</div>
+          <div class="data-desc">Identifiant numérique unique Discord. Utilisé pour identifier les membres sanctionnés et les membres du staff qui appliquent une action.</div>
+        </div>
+      </li>
+      <li>
+        <div class="data-marker marker-yellow"></div>
+        <div>
+          <div class="data-label">Raison des sanctions</div>
+          <div class="data-desc">Texte saisi par le staff lors d'un avertissement, d'une note, d'un mute, d'une peine, d'un bannissement ou d'une mise en liste noire.</div>
+          <div class="data-sensitive">Peut contenir des informations personnelles si le staff les mentionne dans la raison</div>
+        </div>
+      </li>
+      <li>
+        <div class="data-marker marker-grey"></div>
+        <div>
+          <div class="data-label">Historique des actions de staff</div>
+          <div class="data-desc">Qui a promu, rétrogradé, nommé ou retiré un membre du staff, et quand — pour permettre un audit interne en cas d'abus signalé.</div>
+        </div>
+      </li>
+      <li>
+        <div class="data-marker marker-grey"></div>
+        <div>
+          <div class="data-label">Dates et durées</div>
+          <div class="data-desc">Horodatage de chaque sanction et durée d'expiration (mute, peine).</div>
+        </div>
+      </li>
+    </ul>
+    <div class="callout callout-green">Gaja ne stocke jamais : le contenu de tes messages, ton pseudo, ton avatar, ton email, ton adresse IP, ou toute donnée en dehors de ce qui est listé ci-dessus. Le filtre anti-liens supprime les messages suspects en temps réel sans jamais les enregistrer en base de données.</div>
+  </div>
+
+  <div class="section">
+    <h2>Pourquoi ces données</h2>
+    <p>Cet historique permet au staff de suivre les récidives, de justifier une sanction, et de vérifier qu'un membre du staff n'abuse pas de ses pouvoirs (via la commande d'audit interne réservée aux administrateurs).</p>
+  </div>
+
+  <div class="section">
+    <h2>Qui peut voir tes données</h2>
+    <p>Seuls les membres du staff disposant des rôles appropriés sur le serveur Discord peuvent consulter l'historique de sanctions d'un membre. L'audit complet (actions reçues et données) est réservé aux administrateurs. Aucun tiers n'y a accès.</p>
+    <div class="callout callout-blue">Les données ne sont jamais partagées, vendues ni transmises en dehors du serveur d'hébergement du bot.</div>
+  </div>
+
+  <div class="section">
+    <h2>Sécurité des données</h2>
+    <p>La base de données de Gaja est chiffrée au repos (SQLCipher). Même en cas d'accès non autorisé au fichier de base de données, son contenu reste illisible sans la clé de chiffrement du bot.</p>
+  </div>
+
+  <div class="section">
+    <h2>Durée de conservation</h2>
+    <p>L'historique de modération est conservé <strong>tant qu'un administrateur ne le supprime pas manuellement</strong>. Cette durée est volontairement plus longue que 30 jours : un bot de modération doit pouvoir retrouver l'historique d'un récidiviste plusieurs mois après les faits pour prendre une décision juste.</p>
+    <p>Un administrateur peut à tout moment supprimer intégralement et définitivement toutes les données concernant un membre, notamment en réponse à une demande de suppression.</p>
+    <p>Les demandes de nomination/retrait de Référent et de rétrogradation en attente de validation expirent automatiquement après 10 minutes si elles ne sont pas traitées.</p>
+  </div>
+
+  <div class="section">
+    <h2>Tes droits (RGPD)</h2>
+    <p>Si tu es résident européen, tu disposes d'un droit d'accès, de rectification et d'effacement de tes données. Pour l'exercer, ouvre un ticket sur le serveur Discord — voir Contact ci-dessous.</p>
+  </div>
+
+  <div class="section">
+    <h2>Contact</h2>
+    <p>Gaja fonctionne uniquement sur un serveur Discord unique. Pour toute demande relative à tes données (accès, rectification, suppression), <strong>ouvre un ticket via le système de tickets du serveur</strong> : un administrateur traitera ta demande directement.</p>
+  </div>
+
+</div>
+
+<footer>
+  <span>Gaja Bot · 2026</span>
+  <span>Pour Discord</span>
+</footer>
+
+</body>
+</html>

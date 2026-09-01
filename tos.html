@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaja · Conditions d'utilisation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0d0d0f;
+  --surface: #141416;
+  --border: #222226;
+  --text: #f0f0f2;
+  --sub: #8888a0;
+  --accent: #3b82f6;
+  --accent-dim: rgba(59,130,246,0.1);
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(13,13,15,0.92);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+.nav-left { display: flex; align-items: center; gap: 10px; }
+.nav-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+.nav-name { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.03em; }
+.nav-tag { font-size: 0.78rem; color: var(--sub); border: 1px solid var(--border); padding: 2px 10px; border-radius: 4px; }
+.nav-links { display: flex; gap: 18px; }
+.nav-links a { color: var(--sub); font-size: 0.82rem; text-decoration: none; }
+.nav-links a:hover { color: var(--text); }
+.hero {
+  max-width: 680px;
+  margin: 72px auto 64px;
+  padding: 0 32px;
+}
+.hero-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--accent); }
+h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.hero-meta { color: var(--sub); font-size: 0.85rem; }
+.layout {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 32px 100px;
+}
+.section { margin-bottom: 52px; }
+h2 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sub);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+p { color: #c0c0cc; margin-bottom: 14px; }
+p:last-child { margin-bottom: 0; }
+strong { color: var(--text); font-weight: 600; }
+ul.plain { list-style: disc; padding-left: 20px; color: #c0c0cc; }
+ul.plain li { margin-bottom: 8px; }
+.callout {
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-top: 24px;
+  font-size: 0.875rem;
+  background: var(--accent-dim);
+  border: 1px solid rgba(59,130,246,0.2);
+  color: #93c5fd;
+}
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 32px;
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--sub);
+  font-size: 0.8rem;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <div class="nav-dot"></div>
+    <span class="nav-name">Gaja</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Confidentialité</a>
+    <span class="nav-tag">CGU</span>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Conditions d'utilisation</div>
+  <h1>Règles d'usage<br>de Gaja</h1>
+  <div class="hero-meta">Mis à jour en septembre 2026</div>
+</div>
+
+<div class="layout">
+
+  <div class="section">
+    <h2>Objet</h2>
+    <p>Gaja est un bot Discord de modération et de gestion d'équipe, mis à disposition sur un unique serveur Discord. En utilisant ce serveur, tu acceptes les présentes conditions.</p>
+  </div>
+
+  <div class="section">
+    <h2>Fonctionnement</h2>
+    <p>Gaja applique des sanctions (avertissement, note, mute, peine, bannissement, liste noire) décidées par le staff du serveur, gère la hiérarchie des grades et des rôles de Référent, et supprime automatiquement les liens d'invitation Discord non autorisés et les domaines suspects.</p>
+  </div>
+
+  <div class="section">
+    <h2>Ce que tu ne dois pas faire</h2>
+    <ul class="plain">
+      <li>Tenter de contourner ou d'exploiter une faille du bot pour échapper à une sanction.</li>
+      <li>Utiliser le bot pour harceler, usurper ou nuire à un autre membre.</li>
+      <li>Poster des liens d'invitation Discord non autorisés ou des liens vers des sites malveillants — ces messages seront automatiquement supprimés et sanctionnés.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Limitation de responsabilité</h2>
+    <p>Gaja est fourni "en l'état", sans garantie de disponibilité continue. Le staff du serveur reste seul responsable des décisions de modération appliquées via le bot ; Gaja n'est qu'un outil d'exécution et de suivi.</p>
+  </div>
+
+  <div class="section">
+    <h2>Modifications</h2>
+    <p>Ces conditions et la politique de confidentialité associée peuvent être mises à jour à tout moment. La date de mise à jour est indiquée en haut de chaque page.</p>
+    <div class="callout">Pour toute question sur ces conditions, ouvre un ticket via le système de tickets du serveur Discord.</div>
+  </div>
+
+</div>
+
+<footer>
+  <span>Gaja Bot · 2026</span>
+  <span>Pour Discord</span>
+</footer>
+
+</body>
+</html>
